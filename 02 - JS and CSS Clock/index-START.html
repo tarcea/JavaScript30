@@ -62,13 +62,37 @@
       background: black;
       position: absolute;
       top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0, 2.76, 1, 1);
     }
 
   </style>
 
   <script>
+  const secHand = document.querySelector('.second-hand');
+  const minHand = document.querySelector('.min-hand');
+  const hourHand = document.querySelector('.hour-hand');
 
-  console.log("mai animalule");
+  setDate = () => {
+    const now = new Date(); //current date
+    const sec = now.getSeconds(); //get just seconds from current date
+    const secDegrees = (sec * 6) + 90; // transformation seconds in
+                                        // degrees (6degrees/second)
+                                        // plus 90 because in css we have
+                                        // this offset 'transform: rotate(90deg);'
+
+    secHand.style.transform = `rotate(${secDegrees}deg)`;
+    const min = now.getMinutes(); // get minutes from current date
+    const minDegrees = (min * 6) + 90;
+    minHand.style.transform = `rotate(${minDegrees}deg)`;
+    const hour = now.getHours(); // get hour from current date
+    const hourDegrees = (hour * 30) + 90;
+    hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+  }
+  setInterval(setDate, 1000);
   </script>
 </body>
 </html>
