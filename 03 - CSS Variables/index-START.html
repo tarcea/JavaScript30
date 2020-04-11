@@ -61,7 +61,7 @@
     const updateStyle = () => {
       inputs.forEach((input) => {
         //console.log(input.value);
-        const suffix = input.dataset.sizing || '';
+        const suffix = input.dataset.sizing || ''; // just generate 'px' for spacing and blur
         document.documentElement.style.setProperty(`--${input.name}`, input.value + suffix);
       });
     }
