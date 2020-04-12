@@ -106,8 +106,30 @@
      console.table(lastN);
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'cucu' ];
+    const countedItems = data.reduce((allItems, item) => {
+        if (item in allItems) {
+          allItems[item]++;
+        } else {
+          allItems[item] = 1;
+        }
+        return allItems
+    }, {});
+    console.log(countedItems)
+    // *****MDN
+    //let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+    // let countedNames = names.reduce(function (allNames, name) {
+    //   if (name in allNames) {
+    //     allNames[name]++
+    //   }
+    //   else {
+    //     allNames[name] = 1
+    //   }
+    //   return allNames
+    // }, {})
+    // countedNames is:
+    // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+    // *****
   </script>
 </body>
 </html>
