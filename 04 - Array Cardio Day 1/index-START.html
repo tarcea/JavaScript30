@@ -76,11 +76,11 @@
     console.table(longLived);
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-    // fetch("http://www.omdbapi.com/?s=harry potter&apikey=adf1f2d7")
-    // .then(response => response.json())
-    // .then((data) => {
-    //   console.log(data);
-    // });
+    fetch("http://www.omdbapi.com/?s=harry potter&apikey=adf1f2d7")
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data);
+    });
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
